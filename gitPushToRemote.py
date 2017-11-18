@@ -1,5 +1,9 @@
 #!/usr/bin/python
 
 import subprocess
+from GitBranch import *
 
-print("hi")
+branches, currentBranchIndex = getGitBranches()
+currentBranch = branches[currentBranchIndex]
+
+subprocess.call([ "git", "push", "--set-upstream", "origin", currentBranch ])
