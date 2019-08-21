@@ -1,0 +1,77 @@
+;;==========================================================================================
+;; Paths
+;;==========================================================================================
+
+(add-to-list 'load-path "/Users/pchen/Software/Utilities/lib/Emacs/")
+
+;;==========================================================================================
+;; Key bindings
+;;==========================================================================================
+
+(define-key global-map "\C-xf"      'recentf-open-files)
+(global-set-key (kbd "RET") 			'newline-and-indent)
+(define-key global-map "\C-xk"      'kill-this-buffer)
+(define-key global-map "\M-o"       'find-file-at-point)
+(define-key global-map "\C-j"       'newline)
+(define-key global-map "\M-s"       'center-line)
+(define-key global-map "\C-ce"   'open-explorer)
+(define-key global-map "\C-cb"      'ecb-activate) ; will toggle ecb-(de)activate with hooks above
+(define-key global-map "\C-co"      'my-system-open)
+
+(defun my-system-open ()
+   (interactive)
+   (shell-command (concat "open " buffer-file-name)))
+
+(defun open-explorer ()
+  (interactive)
+  ;;(shell-command "explorer ."))
+  (shell-command "open ."))
+
+;;================================================================================
+;; Custom Variables
+;;================================================================================
+
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(blink-cursor-mode t)
+ '(c-basic-offset 3)
+ '(c-tab-always-indent t)
+ '(column-number-mode t)
+ '(css-electric-keys (quote (125 59 125)))
+ '(css-indent-offset 3)
+ '(desktop-save-mode t)
+ '(display-buffer-reuse-frames t)
+ '(fill-column 100)
+ '(gud-gdb-command-name "gdb --annotate=1")
+ '(indent-tabs-mode nil)
+ '(inhibit-splash-screen t)
+ '(initial-scratch-message nil)
+ '(kill-whole-line t)
+ '(large-file-warning-threshold nil)
+ '(lisp-body-indent 3 t)
+ '(make-backup-files nil)
+ '(perl-indent-level 3)
+ '(perl-tab-always-indent t)
+ '(recentf-max-menu-items 50)
+ '(recentf-max-saved-items 100)
+ '(recentf-mode t)
+ '(revert-without-query nil)
+ '(server-mode nil)
+ '(server-raise-frame nil)
+ '(sgml-basic-offset 3)
+ '(show-paren-mode t)
+ '(standard-indent 3)
+ '(tab-always-indent t)
+ '(tab-stop-list (quote (3 6 9 12 15 18 21 24 27 30 33 36 39 42 45 48 51 54 57 60 63 66 69 72 75 78 81 84 87 90 93 96 99)))
+ '(tab-width 3)
+ '(truncate-lines t)
+ '(visible-bell nil))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
